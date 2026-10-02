@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#e8f5e9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>PlaySchool</title>
+<link rel="stylesheet" href="css/app.css?v=9">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">PlaySchool</div>
+    <div class="streak" id="streakBadge" title="Daily streak">🔥<b id="streakCount">0</b></div>
+    <button id="settingsBtn" class="iconbtn" aria-label="Settings">⚙️</button>
+  </header>
+
+  <main id="feeds"></main>
+
+  <nav id="tabbar">
+    <button class="tab" data-section="python"><span class="ti">🐍</span><span class="tl">Python</span><i class="tp"><b></b></i></button>
+    <button class="tab active" data-section="genai"><span class="ti">🧠</span><span class="tl">GenAI</span><i class="tp"><b></b></i></button>
+    <button class="tab" data-section="agentic"><span class="ti">🤖</span><span class="tl">Agentic</span><i class="tp"><b></b></i></button>
+  </nav>
+
+  <div id="scrim"></div>
+
+  <aside id="codePanel" class="sheet right">
+    <div class="sheet-head"><span id="codeTitle" class="sheet-title"></span><button class="iconbtn close-sheet">✕</button></div>
+    <div class="sheet-scroll">
+      <pre id="codeBody" class="code"></pre>
+      <div id="codeNotes" class="annotes"></div>
+    </div>
+  </aside>
+
+  <section id="notesSheet" class="sheet bottom">
+    <div class="grab"></div>
+    <div class="sheet-head"><span id="notesTitle" class="sheet-title"></span><button class="iconbtn close-sheet">✕</button></div>
+    <div id="notesBody" class="sheet-scroll notes-body"></div>
+  </section>
+
+  <section id="settingsSheet" class="sheet bottom">
+    <div class="grab"></div>
+    <div class="sheet-head"><span class="sheet-title">⚙️ Settings</span><button class="iconbtn close-sheet">✕</button></div>
+    <div class="sheet-scroll set-body">
+      <label class="set-row">🗣️ Voice
+        <select id="voiceSel"></select>
+        <button id="voiceTest" class="iconbtn" aria-label="Preview voice" title="Preview this voice">🔊</button>
+      </label>
+      <label class="set-row">⏩ Speed <b id="rateVal">1.05×</b>
+        <input type="range" id="rateSel" min="0.8" max="1.6" step="0.05">
+      </label>
+      <label class="set-row">🎭 Expressiveness <b id="exprVal">60%</b>
+        <input type="range" id="exprSel" min="0" max="1" step="0.05">
+      </label>
+      <label class="set-row">🔇 Mute narration
+        <input type="checkbox" id="muteSel">
+      </label>
+      <button id="resetBtn" class="danger">🗑 Reset all progress</button>
+      <p class="set-hint">Progress, likes &amp; streak live on this device only.<br>Full curriculum · 74 reels · zero dependencies 🚀</p>
+    </div>
+  </section>
+
+  <div id="toast"></div>
+</div>
+
+<script src="js/state.js?v=9"></script>
+<script src="js/narrator.js?v=9"></script>
+<script src="js/scenes.js?v=9"></script>
+<script src="js/data.js?v=9"></script>
+<script src="data/reels/r1.js?v=9"></script>
+<script src="data/reels/r2.js?v=9"></script>
+<script src="data/reels/r3.js?v=9"></script>
+<script src="data/reels/r4.js?v=9"></script>
+<script src="data/reels/r5.js?v=9"></script>
+<script src="data/reels/r6.js?v=9"></script>
+<script src="data/reels/r7.js?v=9"></script>
+<script src="data/reels/r8.js?v=9"></script>
+<script src="data/reels/r9.js?v=9"></script>
+<script src="data/reels/r10.js?v=9"></script>
+<script src="data/reels/r11.js?v=9"></script>
+<script src="data/reels/r12.js?v=9"></script>
+<script src="data/reels/r13.js?v=9"></script>
+<script src="data/reels/r14.js?v=9"></script>
+<script src="data/reels/r15.js?v=9"></script>
+<script src="data/reels/r16.js?v=9"></script>
+<script src="data/reels/r17.js?v=9"></script>
+<script src="data/reels/r18.js?v=9"></script>
+<script src="data/reels/r19.js?v=9"></script>
+<script src="data/reels/r20.js?v=9"></script>
+<script src="data/reels/r21.js?v=9"></script>
+<script src="data/reels/r22.js?v=9"></script>
+<script src="data/reels/r23.js?v=9"></script>
+<script src="data/reels/r24.js?v=9"></script>
+<script src="data/reels/r25.js?v=9"></script>
+<script src="data/reels/r26.js?v=9"></script>
+<script src="data/reels/r27.js?v=9"></script>
+<script src="data/reels/r28.js?v=9"></script>
+<script src="data/reels/r29.js?v=9"></script>
+<script src="data/reels/r30.js?v=9"></script>
+<script src="data/reels/r31.js?v=9"></script>
+<script src="data/reels/r32.js?v=9"></script>
+<script src="data/reels/r33.js?v=9"></script>
+<script src="data/reels/r34.js?v=9"></script>
+<script src="data/reels/r35.js?v=9"></script>
+<script src="data/reels/r36.js?v=9"></script>
+<script src="data/reels/r37.js?v=9"></script>
+<script src="data/reels/r38.js?v=9"></script>
+<script src="data/reels/r39.js?v=9"></script>
+<script src="data/reels/r40.js?v=9"></script>
+<script src="data/reels/r41.js?v=9"></script>
+<script src="data/reels/r42.js?v=9"></script>
+<script src="data/reels/r43.js?v=9"></script>
+<script src="data/reels/r44.js?v=9"></script>
+<script src="data/reels/r45.js?v=9"></script>
+<script src="data/reels/r46.js?v=9"></script>
+<script src="data/reels/r47.js?v=9"></script>
+<script src="data/reels/r48.js?v=9"></script>
+<script src="data/reels/r49.js?v=9"></script>
+<script src="data/reels/r50.js?v=9"></script>
+<script src="data/reels/r51.js?v=9"></script>
+<script src="data/reels/r52.js?v=9"></script>
+<script src="data/reels/r53.js?v=9"></script>
+<script src="data/reels/r54.js?v=9"></script>
+<script src="data/reels/r55.js?v=9"></script>
+<script src="data/reels/r56.js?v=9"></script>
+<script src="data/reels/r57.js?v=9"></script>
+<script src="data/reels/r58.js?v=9"></script>
+<script src="data/reels/r59.js?v=9"></script>
+<script src="data/reels/r60.js?v=9"></script>
+<script src="data/reels/r61.js?v=9"></script>
+<script src="data/reels/r62.js?v=9"></script>
+<script src="data/reels/r63.js?v=9"></script>
+<script src="data/reels/r64.js?v=9"></script>
+<script src="data/reels/r65.js?v=9"></script>
+<script src="data/reels/r66.js?v=9"></script>
+<script src="data/reels/r67.js?v=9"></script>
+<script src="data/reels/r68.js?v=9"></script>
+<script src="data/reels/r69.js?v=9"></script>
+<script src="data/reels/r70.js?v=9"></script>
+<script src="data/reels/r71.js?v=9"></script>
+<script src="data/reels/r72.js?v=9"></script>
+<script src="data/reels/r73.js?v=9"></script>
+<script src="data/reels/r74.js?v=9"></script>
+<script src="js/player.js?v=9"></script>
+<script src="js/feed.js?v=9"></script>
+<script src="js/main.js?v=9"></script>
+</body>
+</html>
