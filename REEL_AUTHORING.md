@@ -86,8 +86,7 @@ The app is a static site served from GitHub Pages and ships with a service worke
 
 With every deploy:
 
-1. Change any code/CSS → **bump `VERSION` at the top of `sw.js`** (e.g. `ps-shell-v1` → `ps-shell-v2`). This is the release trigger: on activate, the old cache is deleted and the new shell is precached. Changing only reel *content* in `data/reels/` requires this too.
-2. Optional cosmetic bump: keep `?v=` in `index.html` in sync (`?v=11`, …) so non-SW loads (first visit, dev) skip the browser cache.
+1. Change any code/CSS/reel content → **bump `VERSION` at the top of `sw.js`** (e.g. `ps-shell-v2` → `ps-shell-v3`). This is the release trigger and the ONLY step that matters for cache busting: on activate, the old cache is deleted and the new shell is precached. (The `?v=` query strings were removed from `index.html` — the worker strips queries when caching anyway, so the `sw.js` version is the single source of truth.)
 3. Verify: `node --check` every changed JS file.
 4. Commit + push to `main`. GitHub Pages publishes within ~1 min; verify with `curl -s https://realsharadyadav.github.io/playschool/ | grep -c "VERSION-string-you-expect"` (or check an asset URL returns 200).
 5. Navigations are network-first, so visitors always get the newest HTML; assets serve cache-first offline from the precached shell.

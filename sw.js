@@ -1,6 +1,6 @@
 /* PlaySchool service worker — precaches the app shell, serves cache-first
    with network fallback (and runtime-caches the GSAP/Lottie CDN files).     */
-const VERSION = 'ps-shell-v1';
+const VERSION = 'ps-shell-v2';
 
 const SHELL = [
   './', 'index.html',
