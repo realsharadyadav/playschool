@@ -1,0 +1,16 @@
+{
+  "name": "PlaySchool — Learn Python, GenAI & Agentic AI",
+  "short_name": "PlaySchool",
+  "description": "Learn Python, GenAI & Agentic AI in 60-second animated reels you watch, not read.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e8f5e9",
+  "theme_color": "#e8f5e9",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
